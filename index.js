@@ -3,7 +3,7 @@ const btn = document.getElementById('btn');
 
 const content = document.querySelector('.content');
 
-let openSidebar = true;
+let openSidebar = false;
 
 function openSideBar() {
     sideBar.style.left = "0";
@@ -16,13 +16,13 @@ function openSideBar() {
   }
 
 function toggleSideBar() {
-  if (openSidebar) {
+  if (!openSidebar) {
     openSideBar();
-    openSidebar = false;
+    openSidebar = true;
   } 
   else {
     closeSideBar();
-    openSidebar = true;
+    openSidebar = false;
   }
 }
 
@@ -30,8 +30,8 @@ function toggleSideBar() {
 btn.addEventListener('click', toggleSideBar);
 
 content.addEventListener('click', function () {
-    if (!openSidebar) {
+    if (openSidebar) {
         closeSideBar();
-        openSidebar = true;
+        openSidebar = false;
         }
     });
