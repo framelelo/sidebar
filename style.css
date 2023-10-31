@@ -30,6 +30,24 @@ p {
   left: -230px;
   transition: 0.5s ease-out;
   z-index: 4;
+
+  &.open {
+    left: 0;
+    > .toggle-btn {
+    > span:nth-child(2) {
+      transform: rotate(315deg);
+    }
+
+    > span:first-child {
+      transform: rotate(45deg) translate(8px, 9px);
+    }
+    
+    > span:last-child { 
+      display: none;
+    }
+
+  }
+}
 }
 .toggle-btn {
   position: absolute;
@@ -60,17 +78,4 @@ li:hover {
   color: #fcfcfb;
 }
 
-.open .toggle-btn {
-  > span:nth-child(2) {
-    transform: rotate(315deg);
-  }
-  
-  > span:first-child {
-    transform: rotate(45deg) translate(8px, 9px);
-  }
-  
-  > span:last-child { 
-    display: none;
-  }
 
-}

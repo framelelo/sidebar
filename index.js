@@ -3,35 +3,11 @@ const btn = document.getElementById('btn');
 
 const content = document.querySelector('.content');
 
-let openSidebar = false;
-
 function openSideBar() {
-    sideBar.style.left = "0";
-    sideBar.classList.add("open");
-  }
-  
-  function closeSideBar() {
-    sideBar.style.left = "-230px";
-    sideBar.classList.remove("open");
-  }
-
-function toggleSideBar() {
-  if (!openSidebar) {
-    openSideBar();
-    openSidebar = true;
-  } 
-  else {
-    closeSideBar();
-    openSidebar = false;
-  }
+    sideBar.classList.toggle("open");
 }
 
 
-btn.addEventListener('click', toggleSideBar);
+btn.addEventListener('click', openSideBar);
 
-content.addEventListener('click', function () {
-    if (openSidebar) {
-        closeSideBar();
-        openSidebar = false;
-        }
-    });
+content.addEventListener('click',openSideBar);
